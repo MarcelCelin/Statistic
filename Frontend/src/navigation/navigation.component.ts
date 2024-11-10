@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs'
 
 @Component({
-    moduleId: module.id,
-    selector: 'navigation',
-    templateUrl: 'navigation.component.html',
-    styleUrls: ['navigation.component.scss'],
-    standalone: true,
-    imports:  [MatTabsModule]
+  moduleId: module.id,
+  selector: 'navigation',
+  templateUrl: 'navigation.component.html',
+  styleUrls: ['navigation.component.scss'],
+  standalone: true,
+  imports: [],
 })
-export class NavigationComponent {
-
-}
+export class NavigationComponent {}
