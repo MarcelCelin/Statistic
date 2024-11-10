@@ -6,6 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class MemberService {
     private MemberRepository memberRepository;
@@ -39,5 +42,31 @@ public class MemberService {
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body("Member with the firstname "+ member.getFirstName() + " added successfully");
+    }
+
+    public ResponseEntity<?> findAllMembers() {
+         List<Member> members = memberRepository.findAll();
+
+        return ResponseEntity.status(HttpStatus.OK).body(members);
+    }
+
+    public ResponseEntity<?> findByMemberId(String memberId) {
+
+        Optional<Member> member = memberRepository.findMemberByMemberId(memberId);
+        if(member.isPresent()) {
+            return ResponseEntity.status(HttpStatus.OK).body(member.get());
+        } else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Member not found");
+        }
+    }
+    public ResponseEntity<?> editMember(Member member) {
+
+        Optional<Member> editMember = memberRepository.findMemberByMemberId(member.getMemberId());
+        if(editMember.isPresent()) {
+            memberRepository.save(member);
+            return ResponseEntity.status(HttpStatus.OK).body("Member with the firstname "+ member.getFirstName() + " edited successfully");
+        } else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Member not found");
+        }
     }
 }

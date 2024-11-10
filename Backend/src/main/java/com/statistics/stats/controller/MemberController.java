@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/members")
 @CrossOrigin(origins = "http://localhost:4200")
 public class MemberController {
 
@@ -14,9 +14,26 @@ public class MemberController {
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
-    @PostMapping("/add-user")
+
+    @PostMapping("/add-member")
     public ResponseEntity<?> addMember(@RequestBody Member newMember){
 
         return memberService.addMember(newMember);
     }
+    @GetMapping("/find-all-members")
+    public ResponseEntity<?> getMember(){
+        return memberService.findAllMembers();
+    }
+    @GetMapping("/find-by-memberId/{memberId}")
+    public ResponseEntity<?> getMemberByMemberId(@PathVariable String memberId){
+
+        return memberService.findByMemberId(memberId);
+    }
+    @PutMapping("/edit-member")
+    public ResponseEntity<?> editMember( @RequestBody Member newMember){
+
+        return memberService.editMember(newMember);
+
+    }
+
 }
