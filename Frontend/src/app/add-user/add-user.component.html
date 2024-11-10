@@ -1,0 +1,37 @@
+<h4>Creer un nouveau membre</h4>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input formControlName="nom" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Prenom</mat-label>
+    <input formControlName="prenom" matInput> 
+  </mat-form-field>
+  <mat-radio-group formControlName="sex" aria-label="Sex">
+    <mat-radio-button value="1">Homme</mat-radio-button>
+    <mat-radio-button value="2">Femme</mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field>
+    <mat-label>date de naissance</mat-label>
+    <input formControlName="date-de-naissance" matInput> 
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input formControlName="email" matInput> 
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Numero de telephone</mat-label>
+    <input formControlName="numero-de-tel" matInput> 
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Profession</mat-label>
+    <input formControlName="Profession" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Situation</mat-label>
+    <input formControlName="situation" matInput>
+  </mat-form-field>
+  
+  <button mat-raised-button type="submit">Enregistrer</button>
+</form>
