@@ -18,10 +18,7 @@ public class UserValidators {
          }
          return false;
     }
-    public boolean isDateOfBirthCorrect(Date dateOfBirth) {
-        LocalDate localDateTime = LocalDate.now();
 
-    }
     public void formatDate(LocalDate date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formattedDate = date.format(formatter);
