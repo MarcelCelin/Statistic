@@ -1,8 +1,7 @@
 package com.statistics.stats.controller;
 
 import com.statistics.stats.model.entity.Member;
-import com.statistics.stats.security.MemberService;
-import org.springframework.http.HttpStatus;
+import com.statistics.stats.service.MemberService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,12 +15,8 @@ public class MemberController {
         this.memberService = memberService;
     }
     @PostMapping("/add-user")
-    public ResponseEntity<?> addUser(@RequestBody Member user){
+    public ResponseEntity<?> addMember(@RequestBody Member newMember){
 
-        if(memberService.addUser(user)) {
-            return ResponseEntity.ok().build();
-        }else{
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
+        return memberService.addMember(newMember);
     }
 }

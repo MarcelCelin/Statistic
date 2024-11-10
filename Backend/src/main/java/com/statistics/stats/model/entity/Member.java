@@ -15,10 +15,10 @@ import java.util.Date;
 public class Member {
 
     @Id
-    private String id;
+    private String memberId;
 
-    private String FirstName;
-    private String LastName;
+    private String firstName;
+    private String lastName;
     private Date dateOfBirth;
     private String email;
     private Gender gender;
@@ -26,6 +26,5 @@ public class Member {
     private String contact;
     private Profession profession;
     private Situation situation;
-
 
 }
