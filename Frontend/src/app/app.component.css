@@ -1,0 +1,30 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f3f3f3; 
+    border-bottom: 2px solid #ccc; 
+  }
+  
+ 
+  .logo {
+    height: 60px; 
+    width: auto;
+    margin-right: 15px; 
+  }
+  
+
+  .app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; 
+    text-align: center;
+    margin: 0;
+  }
+  
+  .menu-container {
+    margin-top: 30px; 
+  }
+  

@@ -1,68 +1,31 @@
-/* Container for the menu */
 .menu-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
-    background-color: #f9f9f9; /* Light background for the menu */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 20px auto; /* Center the menu */
   }
   
-  /* Each row in the menu */
   .menu-row {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    width: 100%; /* Take full width of the container */
+    margin-bottom: 50px;
   }
   
-  /* Individual menu items */
   .menu-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 30px 60px;
+    margin: 0 50px;
     text-decoration: none;
-    color: #fff;
-    background-color: #007bff; /* Primary color for buttons */
-    padding: 15px 20px;
+    color: #333;
+    background-color: #e0e0e0;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 150px; /* Fixed width for uniformity */
-    text-align: center;
+    transition: background-color 0.3s;
   }
   
-  /* Hover effects for menu items */
   .menu-item:hover {
-    background-color: #0056b3; /* Darker shade for hover */
-    transform: translateY(-2px);
+    background-color: #bbb;
   }
   
-  /* Full-width menu item for the third row */
   .menu-item-full {
     width: 100%;
-    max-width: 300px; /* Centered and smaller than full container */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 480px) {
-    .menu-container {
-      padding: 10px;
-    }
-  
-    .menu-item {
-      padding: 10px 15px;
-      font-size: 14px;
-      width: auto; /* Flexible width for smaller screens */
-    }
-  
-    .menu-item-full {
-      max-width: 100%; /* Make full width for small screens */
-    }
+    text-align: center;
   }
   

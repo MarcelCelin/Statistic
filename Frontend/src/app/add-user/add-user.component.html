@@ -1,37 +1,60 @@
-<h4>Creer un nouveau membre</h4>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <mat-label>Nom</mat-label>
-    <input formControlName="nom" matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Prenom</mat-label>
-    <input formControlName="prenom" matInput> 
-  </mat-form-field>
-  <mat-radio-group formControlName="sex" aria-label="Sex">
-    <mat-radio-button value="1">Homme</mat-radio-button>
-    <mat-radio-button value="2">Femme</mat-radio-button>
-  </mat-radio-group>
-  <mat-form-field>
-    <mat-label>date de naissance</mat-label>
-    <input formControlName="date-de-naissance" matInput> 
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Email</mat-label>
-    <input formControlName="email" matInput> 
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Numero de telephone</mat-label>
-    <input formControlName="numero-de-tel" matInput> 
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Profession</mat-label>
-    <input formControlName="Profession" matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Situation</mat-label>
-    <input formControlName="situation" matInput>
-  </mat-form-field>
-  
-  <button mat-raised-button type="submit">Enregistrer</button>
-</form>
+<div>
+  <h5>Creer un nouveau membre</h5>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input formControlName="nom" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Prenom</mat-label>
+      <input formControlName="prenom" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Sex</mat-label>
+      <mat-select formControlName="sex">
+        <mat-option value="MALE">Homme</mat-option>
+        <mat-option value="FEMALE">Femme</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Date de naissance</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateDeNaissance" [max]="maxDate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Numero de telephone</mat-label>
+      <input formControlName="numeroDeTel" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Profession</mat-label>
+      <mat-select formControlName="profession">
+        <mat-option value="CHILD">CHILD</mat-option>
+        <mat-option value="WORKER">WORKER</mat-option>
+        <mat-option value="STUDENT">STUDENT</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Situation</mat-label>
+      <mat-select formControlName="situation">
+        <mat-option value="SINGLE">SINGLE</mat-option>
+        <mat-option value="FIANCE">FIANCE</mat-option>
+        <mat-option value="MARRIED">MARRIED</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Adresse</mat-label>
+      <input formControlName="adresse" matInput>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit">Enregistrer</button>
+  </form>
+</div>
