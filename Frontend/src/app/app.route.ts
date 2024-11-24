@@ -1,9 +1,10 @@
-import {Routes} from '@angular/router';
-import { NavigationComponent } from 'src/navigation/navigation.component';
+import { Routes } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
 import { AddUserComponent } from './add-user/add-user.component';
-import { provideRouter } from '@angular/router';
 
-export const routes = [
-    {path: 'add-user', component:AddUserComponent },
-{path: 'users', component: NavigationComponent },
+export const routes: Routes = [
+  { path: '', redirectTo: '/menu', pathMatch: 'full' }, 
+  { path: 'menu', component: MenuComponent },
+  { path: 'add-member', component: AddUserComponent },
+  { path: '**', redirectTo: '/menu' },                     
 ];
